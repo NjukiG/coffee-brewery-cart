@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Modal, Button, Container, Navbar } from "react-bootstrap";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { CartContext } from "../CartContext";
 
 function NavBar() {
+  const cart = useContext(CartContext);
   const [show, setShow] = useState(false);
-
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+
+  const productsCount = cart.items.reduce((accumulator, product) => {
+    return accumulator + product.quantity;
+  }, 0);
+
+  console.log(productsCount)
+
   return (
     <>
       <Navbar bg="dark" variant="dark" fixed="top" expand="sm">
@@ -14,7 +23,7 @@ function NavBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
             <Button variant="success" onClick={handleShow}>
-              Cart 10 Items
+              <AiOutlineShoppingCart fontSize="25px" /> {productsCount} Items
             </Button>
           </Navbar.Collapse>
         </Container>
