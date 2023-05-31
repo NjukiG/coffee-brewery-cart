@@ -1,5 +1,6 @@
 import React from "react";
-import { Col, Row, Image } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
+import ProductCard from "../components/ProductCard";
 import { productsArray } from "../productsStore";
 
 function Store() {
@@ -11,10 +12,7 @@ function Store() {
         {productsArray.map((product, index) => {
           return (
             <Col align="center" key={index} className="product-card">
-                <Image src={product.image} className="product-image"/>
-              <h3>{product.title}</h3>
-        
-              <h5>{product.price}</h5>
+              <ProductCard product={product} />
             </Col>
           );
         })}
