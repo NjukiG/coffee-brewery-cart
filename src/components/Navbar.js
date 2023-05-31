@@ -13,7 +13,7 @@ function NavBar() {
     return accumulator + product.quantity;
   }, 0);
 
-  console.log(productsCount)
+  console.log(productsCount);
 
   return (
     <>
@@ -36,17 +36,26 @@ function NavBar() {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Shopping Cart
+            My Shopping Cart
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h1>This is the contents of the modal</h1>
+          {productsCount > 0 ? (
+            <>
+              <h4>Items in your CArt!</h4>
+              {cart.items.map((currentProduct, index) => {
+                return <h3>{currentProduct.title}</h3>;
+              })}
+              <h2>Total: {cart.getTotalCost().toFixed(2)}</h2>
+              <Button variant="success">Proceed to Checkout.</Button>
+            </>
+          ) : (
+            <>
+              <h3>You dont have items in your cart.</h3>{" "}
+              <h4>Visit our products page to add items to your cart!</h4>
+            </>
+          )}
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="outline-warning" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
