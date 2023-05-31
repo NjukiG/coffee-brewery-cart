@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Error() {
   return (
@@ -14,9 +14,9 @@ function Error() {
         className="error-image"
       />
       <br />
-      <br />
+      
 
-      <Button variant="outline-warning">Back Home</Button>
+      <Link className="btn btn-outline-warning" to="/">Back Home</Link>
     </div>
   );
 }

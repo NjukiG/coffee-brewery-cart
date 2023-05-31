@@ -24,6 +24,19 @@
 
 .error-image {
   width: 900px;
-  height: 450px;
+  height: 400px;
   object-fit: cover;
+}
+
+/* .product-card{
+  display: flex;
+  width: 78%;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+} */
+
+.product-image{
+  width: 350px;
+  height: 300px;
 }
