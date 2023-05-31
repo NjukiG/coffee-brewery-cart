@@ -34,8 +34,10 @@ function NavBar() {
           <h1>This is the contents of the modal</h1>
         </Modal.Body>
         <Modal.Footer>
-        <Button variant="outline-warning" onClick={handleClose}>Close</Button>
-      </Modal.Footer>
+          <Button variant="outline-warning" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
       </Modal>
     </>
   );

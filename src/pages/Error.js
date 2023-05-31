@@ -14,9 +14,10 @@ function Error() {
         className="error-image"
       />
       <br />
-      
 
-      <Link className="btn btn-outline-warning" to="/">Back Home</Link>
+      <Link className="btn btn-outline-warning" to="/">
+        Back Home
+      </Link>
     </div>
   );
 }
