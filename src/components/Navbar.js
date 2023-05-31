@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Modal, Button, Container, Navbar } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CartContext } from "../CartContext";
+import CartProduct from "./CartProduct";
 
 function NavBar() {
   const cart = useContext(CartContext);
@@ -19,7 +20,7 @@ function NavBar() {
     <>
       <Navbar bg="dark" variant="dark" fixed="top" expand="sm">
         <Container>
-          <Navbar.Brand href="/">Shoppiez Store</Navbar.Brand>
+          <Navbar.Brand href="/">The Brewery</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
             <Button variant="success" onClick={handleShow}>
@@ -44,14 +45,18 @@ function NavBar() {
             <>
               <h4>Items in your CArt!</h4>
               {cart.items.map((currentProduct, index) => {
-                return <h3>{currentProduct.title}</h3>;
+               return  <CartProduct
+                  id={currentProduct.id}
+                  quantity={currentProduct.quantity}
+                  image={currentProduct.image}
+                />;
               })}
               <h2>Total: {cart.getTotalCost().toFixed(2)}</h2>
               <Button variant="success">Proceed to Checkout.</Button>
             </>
           ) : (
             <>
-              <h3>You dont have items in your cart.</h3>{" "}
+              <h3>You dont have items in your cart.</h3>
               <h4>Visit our products page to add items to your cart!</h4>
             </>
           )}

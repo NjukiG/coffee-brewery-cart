@@ -7,7 +7,7 @@ function Store() {
   console.log(productsArray);
   return (
     <div>
-      <h1>Welcome to SHoppiez Store!</h1>
+      <h1>Welcome to the Brewery!</h1>
       <Row xs={1} md={3} className="g-4">
         {productsArray.map((product, index) => {
           return (
