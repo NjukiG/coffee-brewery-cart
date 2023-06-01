@@ -3,6 +3,8 @@ import { Modal, Button, Container, Navbar } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CartContext } from "../CartContext";
 import CartProduct from "./CartProduct";
+import { Link } from "react-router-dom";
+
 
 function NavBar() {
   const cart = useContext(CartContext);
@@ -45,14 +47,16 @@ function NavBar() {
             <>
               <h4>Items in your CArt!</h4>
               {cart.items.map((currentProduct, index) => {
-               return  <CartProduct
-                  id={currentProduct.id}
-                  quantity={currentProduct.quantity}
-                  image={currentProduct.image}
-                />;
+                return (
+                  <CartProduct
+                    id={currentProduct.id}
+                    quantity={currentProduct.quantity}
+                    image={currentProduct.image}
+                  />
+                );
               })}
               <h2>Total: {cart.getTotalCost().toFixed(2)}</h2>
-              <Button variant="success">Proceed to Checkout.</Button>
+              <Link to="/success" className="btn btn-success">Proceed to Checkout.</Link>
             </>
           ) : (
             <>
