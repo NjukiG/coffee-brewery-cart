@@ -4,7 +4,7 @@ import { CartContext } from "../CartContext";
 import {
   BsPlusSquareFill,
   BsPatchMinusFill,
-  AiFillDelete,
+
 } from "react-icons/bs";
 
 function ProductCard({ product }) {
