@@ -1,10 +1,9 @@
 import React, { useState, useContext } from "react";
-import { Modal, Button, Container, Navbar } from "react-bootstrap";
+import { Modal, Button, Container, Navbar, Nav } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CartContext } from "../CartContext";
 import CartProduct from "./CartProduct";
 import { Link } from "react-router-dom";
-
 
 function NavBar() {
   const cart = useContext(CartContext);
@@ -25,6 +24,10 @@ function NavBar() {
           <Navbar.Brand href="/">The Brewery</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
+            <Nav className="me-auto">
+              <Nav.Link href="/about">About</Nav.Link>
+            </Nav>
+
             <Button variant="success" onClick={handleShow}>
               <AiOutlineShoppingCart fontSize="25px" /> {productsCount} Items
             </Button>
@@ -56,7 +59,9 @@ function NavBar() {
                 );
               })}
               <h2>Total: {cart.getTotalCost().toFixed(2)}</h2>
-              <Link to="/success" className="btn btn-success">Proceed to Checkout.</Link>
+              <Link to="/success" className="btn btn-success">
+                Proceed to Checkout.
+              </Link>
             </>
           ) : (
             <>
