@@ -1,11 +1,7 @@
 import React, { useContext } from "react";
 import { Button, Card, Col, Form } from "react-bootstrap";
 import { CartContext } from "../CartContext";
-import {
-  BsPlusSquareFill,
-  BsPatchMinusFill,
-
-} from "react-icons/bs";
+import { BsPlusSquareFill, BsPatchMinusFill } from "react-icons/bs";
 
 function ProductCard({ product }) {
   const cart = useContext(CartContext);
@@ -21,10 +17,13 @@ function ProductCard({ product }) {
       />
       <Card.Body>
         <Card.Title>{product.title}</Card.Title>
-        <Card.Text>{product.price}</Card.Text>
-        <Card.Text>{product.ingredients.map((ingredient) => {
-          return <span>{ingredient}, </span>
-        })}</Card.Text>
+        <Card.Text>KES: {product.price}</Card.Text>
+        <Card.Text>
+          Ingredients:
+          {product.ingredients.map((ingredient) => {
+            return <span>{ingredient}, </span>;
+          })}
+        </Card.Text>
         {productQuantity > 0 ? (
           <>
             <Form>
