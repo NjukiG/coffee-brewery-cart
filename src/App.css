@@ -29,6 +29,7 @@
 }
 
 /* .product-card{
+  height: auto;
   display: flex;
   width: 78%;
   padding: 20px;
@@ -38,7 +39,7 @@
 
 .product-image {
   width: 286px;
-  height: 220px;
+  height: 330px;
 }
 
 .price-text {

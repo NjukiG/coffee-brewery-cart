@@ -22,6 +22,9 @@ function ProductCard({ product }) {
       <Card.Body>
         <Card.Title>{product.title}</Card.Title>
         <Card.Text>{product.price}</Card.Text>
+        <Card.Text>{product.ingredients.map((ingredient) => {
+          return <span>{ingredient}, </span>
+        })}</Card.Text>
         {productQuantity > 0 ? (
           <>
             <Form>
